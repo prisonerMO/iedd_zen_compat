@@ -1,0 +1,13 @@
+name = "ZEN - IEDD Notebook Compatibility"
+prefix = "iedd_zen"
+author = "PRION - Team"
+files = [
+    "mod.cpp"
+]
+
+keyname = "{{prefix}}_{{version}}"
+signame = "{{prefix}}_{{version}}"
+
+releasebuild = [
+    "@zip iedd_{{semver.major}}.{{semver.minor}}.{{semver.patch}}"
+]

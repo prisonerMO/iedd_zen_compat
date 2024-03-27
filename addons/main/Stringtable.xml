@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="IEDD_ZEN">
+	<Package name="Main">
+		<Key ID="STR_iedd_zen_main_Options">
+            <English>ZEN IEDD Notebook Options</English>
+            <German>ZEN IEDD Notebook-Optionen</German>
+            <Spanish>Opciones IEDD Notebook</Spanish>
+            <Polish>Ustawienia IEDD Notebook</Polish>
+            <Czech>ZEN IEDD Notebook Nastavení</Czech>
+            <French>Options IEDD Notebook</French>
+            <Russian>ZEN IEDD Notebook Настройки</Russian>
+            <Portuguese>Opções do IEDD Notebook</Portuguese>
+            <Hungarian>ZEN IEDD Notebook Beállítások</Hungarian>
+            <Italian>Opzioni IEDD Notebook</Italian>
+            <Japanese>ZEN IEDD Notebook オプション</Japanese>
+            <Korean>ZEN IEDD Notebook 옵션</Korean>
+            <Chinese>ZEN IEDD Notebook 設定選項</Chinese>
+            <Chinesesimp>ZEN IEDD Notebook 设定选项</Chinesesimp>
+            <Turkish>ZEN IEDD Notebook Ayarlar</Turkish>
+        </Key>
+	</Package>
+</Project>
