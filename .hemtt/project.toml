@@ -1,0 +1,29 @@
+name = "Zeus Enhanced - IEDD Notebook Compatibility"
+prefix = "iedd_zen"
+author = "PRION - Team"
+mainprefix = "x"
+
+[files]
+include = [
+    "mod.cpp"
+]
+
+[version]
+git_hash = 0
+
+[asc]
+enabled = true
+exclude = [
+    ".inc.sqf"
+]
+
+[hemtt.config]
+preset = "Hemtt"
+
+[hemtt.launch]
+workshop = [
+    "450814997", # CBA_A3
+    "463939057", # ace
+    "3048818056", #IEDD Notebook
+    "1779063631", #ZEN
+]
