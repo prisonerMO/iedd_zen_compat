@@ -1,8 +1,8 @@
-name = "ZEN - IEDD Notebook Compatibility 0.0.0";
+name = "IEDD Notebook (DEV) - Zeus Enhanced Compatibility 0.0.0";
 picture = "";
 actionName = "GitHub";
 action = "https://github.com/prisonerMO/zen_iedd";
-description = "ZEN - IEDD Notebook Compatibility - Version 0.0.0";
+description = "IEDD Notebook (DEV) - Zeus Enhanced Compatibility - Version 0.0.0";
 logo = "";
 logoOver = "";
 tooltip = "IEDD Notebook";
