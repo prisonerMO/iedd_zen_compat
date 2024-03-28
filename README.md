@@ -1,3 +1,3 @@
-Adds extended compatibility between Zeus Enhanced and IEDD Notebook.
+IEDD Notebook (DEV) - Zeus Enhanced Compatibility
 
-Refer to the main mod Zeus Enhanced for more information.
+Adds extended compatibility between Zeus Enhanced and IEDD Notebook.
