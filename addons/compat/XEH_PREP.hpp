@@ -1,2 +1,19 @@
 
+PREP(activateIed);
+PREP(confirmBury);
+PREP(confirmPlaceIed);
+PREP(confirmSuicide);
+PREP(confirmTraining);
+PREP(digUpIed);
+PREP(explodeIed);
+PREP(forceDefuseIed);
 PREP(getData);
+PREP(iedTypes);
+PREP(makeSuicideBomber);
+PREP(openBuryDialog);
+PREP(openPlaceDialog);
+PREP(openSuicideDialog);
+PREP(openTrainingDialog);
+PREP(registerActions);
+PREP(resetTrainingIed);
+PREP(trainingIedTypes);

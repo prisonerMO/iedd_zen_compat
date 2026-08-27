@@ -1,6 +1,7 @@
+
 [
     "Object",
-    [EXCSTRING(ied,Distance),EXCSTRING(ied,Distance_Tooltip)],
+    ["STR_iedd_ied_Distance", "STR_iedd_ied_Distance_Tooltip"],
     "zen_attributes_slider",
     [0, 30, 1, false,{format ["%1%2", round(_this),"m"]}],
     {

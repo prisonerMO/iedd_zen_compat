@@ -8,6 +8,6 @@ PREP_RECOMPILE_END;
 
 // Initialize the core/default attributes
 #include "initAttributes.inc.sqf"
-//#include "initSettings.sqf"
+#include "initSettings.inc.sqf"
 
 ADDON = true;
