@@ -38,5 +38,6 @@
 #define QQXFUNC_INNER(var1,var2) QUOTE(QXFUNC_INNER(var1,var2))
 #define QQEXFUNC(var1,var2) QUOTE(QEXFUNC(var1,var2))
 
+
 #include "script_debug.hpp"
 #include "script_classes.hpp"
