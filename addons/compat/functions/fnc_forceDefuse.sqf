@@ -12,10 +12,7 @@
  *
  * Public: No
  */
-
-params ["_objects"];
-
-private _ieds = _objects select {typeOf _x in IEDD_CLASSES};
-if (_ieds isEqualTo []) exitWith {};
-
-[QEXGVAR(ied,forceDefuse), [_ieds, ace_player]] call CBA_fnc_serverEvent;
+private _ieds = _this select {typeOf _x in IEDD_CLASSES};
+if (_ieds isNotEqualTo []) then {
+    [QGVAR(handleForceDefuse), [_ieds, ace_player]] call CBA_fnc_serverEvent; //ToDO
+};

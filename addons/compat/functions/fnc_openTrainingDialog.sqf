@@ -12,9 +12,6 @@
  *
  * Public: No
  */
-
-params ["_position"];
-
 private _types = call FUNC(trainingIedTypes);
 private _typeValues = _types apply {_x select 0};
 private _typeLabels = _types apply {_x select 1};
@@ -39,5 +36,5 @@ private _typeLabels = _types apply {_x select 1};
     ],
     FUNC(confirmTraining),
     {},
-    _position
+    _this
 ] call zen_dialog_fnc_create;

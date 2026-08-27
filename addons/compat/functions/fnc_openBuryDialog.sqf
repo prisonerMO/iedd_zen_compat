@@ -13,17 +13,14 @@
  *
  * Public: No
  */
-
-params ["_objects"];
-
-private _matched = _objects select {
+private _ieds = _this select {
     (typeOf _x in (IEDD_CLASSES + IEDD_FAKE_CLASSES)) &&
     {!(_x getVariable [QEXGVAR(ied,isBury), false])} &&
     {_x call EXFUNC(ied,canBuryIED)}
 };
-if (_matched isEqualTo []) exitWith {};
+if (_ieds isEqualTo []) exitWith {};
 
-private _reference = _matched select 0;
+private _reference = _ieds select 0;
 (_reference call BIS_fnc_getPitchBank) params ["_pitch", "_roll"];
 private _yaw = [getDir _reference] call CBA_fnc_simplifyAngle180;
 
@@ -37,5 +34,5 @@ private _yaw = [getDir _reference] call CBA_fnc_simplifyAngle180;
     ],
     FUNC(confirmBury),
     {},
-    _matched
+    _ieds
 ] call zen_dialog_fnc_create;

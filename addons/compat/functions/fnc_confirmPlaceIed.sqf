@@ -17,7 +17,6 @@
 
 params ["_values", "_position"];
 _values params ["_typeNum", "_variation", "_size", "_dud", "_dist", "_timer", "_value"];
-
 private _types = call FUNC(iedTypes);
 private _type = (_types select _typeNum) select 0;
 private _varData = "getText (_x >> 'name') isEqualTo localize 'STR_iedd_ied_Name_Random'" configClasses (configFile >> "CfgVehicles" >> _type >> "Attributes" >> "iedd_ied_variation" >> "Values") apply {getNumber (_x >> 'value')};
@@ -27,5 +26,6 @@ if (_variation == _random) then {
 };
 _dist = round _dist;
 _value = round _value;
-_position resize 2;
-[QGVAR(createIed), [_type, _position, _variation, _dud, _size, _timer, _value, _dist, _typeNum, -1, 0, 0]] call CBA_fnc_serverEvent;
+_position set [2, 0];
+diag_log format ["IEDD: ZEN Place IED dialog confirmed with type %1, variation %2, size %3, dud %4, distance %5, timer %6, value %7 at position %8", _type, _variation, _size, _dud, _dist, _timer, _value, _position];
+[QEXGVAR(modules,createIed), [_type, _position, _variation, _dud, _size, _timer, _value, _dist, _typeNum, -1, 0, 0]] call CBA_fnc_serverEvent;

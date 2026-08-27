@@ -13,24 +13,23 @@
 //  * Public: No
 //  */
 
-// private _category = ["IEDD", "IEDD", ["moi.paa"], {}, {GVAR(zenContextMenuEnabled)}] call zen_context_menu_fnc_createAction;
+// private _category = ["IEDD", "IEDD", ["x\iedd\addons\models\preview\notebook.paa"], {}, {GVAR(zenContextMenuEnabled)}] call zen_context_menu_fnc_createAction;
 // private _categoryPath = [_category, [], 50] call zen_context_menu_fnc_addAction;
-
 // private _fnc_hasIed = {_objects findIf {typeOf _x in IEDD_CLASSES} != -1};
 // private _fnc_onEmptyGround = {isNull _hoveredEntity};
 
 // private _placeIed = [
-//     "PlaceIED",
-//     localize LSTRING(Zeus_Place_Ied),
+//     QGVAR(placeIed),
+//     LEXLSTRING(modules,Zeus_Place_Ied),
 //     "",
-//     {[_position] call FUNC(openPlaceDialog)},
+//     {_position call FUNC(openPlaceDialog)},
 //     _fnc_onEmptyGround
 // ] call zen_context_menu_fnc_createAction;
 // [_placeIed, _categoryPath, 0] call zen_context_menu_fnc_addAction;
 
 // private _activateIed = [
-//     "ActivateIED",
-//     localize LSTRING(Zeus_Active),
+//     QGVAR(activateIed),
+//     LEXLSTRING(modules,Zeus_Active),
 //     "",
 //     {[_objects] call FUNC(activateIed)},
 //     _fnc_hasIed
@@ -38,8 +37,8 @@
 // [_activateIed, _categoryPath, 0] call zen_context_menu_fnc_addAction;
 
 // private _explodeIed = [
-//     "ExplodeIED",
-//     localize LSTRING(Zeus_Explode),
+//     QGVAR(explodeIed),
+//     LEXLSTRING(modules,Zeus_Explode),
 //     "",
 //     {[_objects] call FUNC(explodeIed)},
 //     _fnc_hasIed
@@ -47,8 +46,8 @@
 // [_explodeIed, _categoryPath, 0] call zen_context_menu_fnc_addAction;
 
 // private _forceDefuseIed = [
-//     "ForceDefuseIED",
-//     localize LSTRING(Zeus_ForceDefuse),
+//     QGVAR(forceDefuseIed),
+//     LEXLSTRING(modules,Zeus_ForceDefuse),
 //     "",
 //     {[_objects] call FUNC(forceDefuseIed)},
 //     _fnc_hasIed
@@ -59,8 +58,8 @@
 // private _fnc_hasBuriedIed = {_objects findIf {(typeOf _x in (IEDD_CLASSES + IEDD_FAKE_CLASSES)) && {_x getVariable [QEGVAR(ied,isBury), false]}} != -1};
 
 // private _buryIed = [
-//     "BuryIED",
-//     localize ELSTRING(ied,IsBury),
+//     QGVAR(buryIed),
+//     LEXLSTRING(ied,IsBury),
 //     "",
 //     {[_objects] call FUNC(openBuryDialog)},
 //     _fnc_hasUnburiedIed
@@ -68,8 +67,8 @@
 // [_buryIed, _categoryPath, 0] call zen_context_menu_fnc_addAction;
 
 // private _digUpIed = [
-//     "DigUpIED",
-//     localize ELSTRING(ied,DigUp_DisplayName),
+//     QGVAR(digUpIed),
+//     LEXLSTRING(ied,DigUp_DisplayName),
 //     "",
 //     {[_objects] call FUNC(digUpIed)},
 //     _fnc_hasBuriedIed
@@ -77,8 +76,8 @@
 // [_digUpIed, _categoryPath, 0] call zen_context_menu_fnc_addAction;
 
 // private _placeTrainingIed = [
-//     "PlaceTrainingIED",
-//     localize LSTRING(Zeus_Place_Training_Ied),
+//     QGVAR(placeTrainingIed),
+//     LEXLSTRING(modules,Zeus_Place_Training_Ied),
 //     "",
 //     {[_position] call FUNC(openTrainingDialog)},
 //     _fnc_onEmptyGround
@@ -88,33 +87,32 @@
 // private _fnc_hasTrainingIed = {_objects findIf {typeOf _x in IEDD_TRAINING_CLASSES} != -1};
 
 // private _resetTrainingIed = [
-//     "ResetTrainingIED",
-//     localize LSTRING(Zeus_ResetTrainingIED),
+//     QGVAR(resetTrainingIed),
+//     LEXLSTRING(modules,Zeus_ResetTrainingIED),
 //     "",
 //     {},
 //     _fnc_hasTrainingIed
 // ] call zen_context_menu_fnc_createAction;
-// private _resetTrainingIedPath = [_resetTrainingIed, _categoryPath, 0] call zen_context_menu_fnc_addAction;
 
 // private _resetTrainingRandom = [
-//     "Random",
-//     localize ELSTRING(ied,Random_DisplayName),
+//     QGVAR(resetTrainingRandom),
+//     LEXLSTRING(ied,Random_DisplayName),
 //     "",
 //     {[_objects, true] call FUNC(resetTrainingIed)}
 // ] call zen_context_menu_fnc_createAction;
-// [_resetTrainingRandom, _resetTrainingIedPath, 0] call zen_context_menu_fnc_addAction;
+// [_resetTrainingRandom, _categoryPath, 0] call zen_context_menu_fnc_addAction;
 
 // private _resetTrainingKeep = [
-//     "Keep",
-//     localize ELSTRING(ied,Keep_DisplayName),
+//     QGVAR(resetTrainingKeep),
+//     LEXLSTRING(ied,Keep_DisplayName),
 //     "",
 //     {[_objects, false] call FUNC(resetTrainingIed)}
 // ] call zen_context_menu_fnc_createAction;
-// [_resetTrainingKeep, _resetTrainingIedPath, 0] call zen_context_menu_fnc_addAction;
+// [_resetTrainingKeep, _categoryPath, 0] call zen_context_menu_fnc_addAction;
 
 // private _makeSuicideBomber = [
-//     "MakeSuicideBomber",
-//     localize LSTRING(Zeus_Suicide),
+//     QGVAR(makeSuicideBomber),
+//     LEXLSTRING(modules,Zeus_Suicide),
 //     "",
 //     {[_objects] call FUNC(openSuicideDialog)},
 //     {_objects findIf {(_x isKindOf "CAManBase") && {alive _x} && {!(_x getVariable [QEGVAR(ied,isCharge), false])}} != -1}

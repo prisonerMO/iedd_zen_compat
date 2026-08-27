@@ -12,17 +12,14 @@
  *
  * Public: No
  */
-
-params ["_objects"];
-
-private _matched = _objects select {
+private _ieds = _this select {
     (_x isKindOf "CAManBase") &&
     {alive _x} &&
     {!(_x getVariable [QEGVAR(ied,isCharge), false])}
 };
-if (_matched isEqualTo []) exitWith {};
+if (_ieds isEqualTo []) exitWith {};
 
-private _reference = _matched select 0;
+private _reference = _ieds select 0;
 private _defaultSides = [west, east, independent, civilian] - [side group _reference];
 
 [
@@ -63,5 +60,5 @@ private _defaultSides = [west, east, independent, civilian] - [side group _refer
     ],
     FUNC(confirmSuicide),
     {},
-    _matched
+    _ieds
 ] call zen_dialog_fnc_create;

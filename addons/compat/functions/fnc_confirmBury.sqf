@@ -30,4 +30,4 @@ private _vectorUp = [
     cos(_roll) * cos(_pitch)
 ];
 
-[QEXGVAR(ied,setBury), [_objects, _depth, [_vectorDir, _vectorUp]]] call CBA_fnc_serverEvent;
+[QGVAR(handleBury), [_objects, _depth, [_vectorDir, _vectorUp]]] call CBA_fnc_serverEvent;
