@@ -19,9 +19,9 @@ params ["_objects", ["_player", objNull, [objNull]]];
 {
     private _bombObj = _x;
 
-    if !(_bombObj getVariable [QGVAR(bomb), false]) exitWith {};
+    if !(_bombObj getVariable [QEXGVAR(ied,bomb), false]) exitWith {};
 
-    _bombObj setVariable [QGVAR(bomb), false, true];
+    _bombObj setVariable [QEXGVAR(ied,bomb), false, true];
 
     {
         if !(isNull _x) then {
@@ -37,18 +37,18 @@ params ["_objects", ["_player", objNull, [objNull]]];
     };
 
     private _typeOf = typeOf _bombObj;
-    if (_typeOf == QGVAR(Charge)) then {
+    if (_typeOf == QEXGVAR(ied,Charge)) then {
         private _unit = attachedTo _bombObj;
         private _jipId = [QGVAR(detachAction), [_bombObj]] call CBA_fnc_globalEventJIP;
         [_jipId, _bombObj] call CBA_fnc_removeGlobalEventJIP;
-        [QGVAR(events), [_unit]] call CBA_fnc_serverEvent;
+        [QEXGVAR(ied,events), [_unit]] call CBA_fnc_serverEvent;
     };
-    if (_typeOf == QEGVAR(vbied,box)) then {
+    if (_typeOf == QEXGVAR(vbied,box)) then {
         private _vehicle = attachedTo _bombObj;
-        [QEGVAR(vbied,events), [_vehicle]] call CBA_fnc_serverEvent;
-        private _jipId = [QEGVAR(vbied,detachAction), [_bombObj, _vehicle]] call CBA_fnc_globalEventJIP;
+        [QEXGVAR(vbied,events), [_vehicle]] call CBA_fnc_serverEvent;
+        private _jipId = [QEXGVAR(vbied,detachAction), [_bombObj, _vehicle]] call CBA_fnc_globalEventJIP;
         [_jipId, _bombObj] call CBA_fnc_removeGlobalEventJIP;
     };
 
-    [QGVAR(defused), [_player, _bombObj]] call CBA_fnc_globalEvent;
+    [QEXGVAR(ied,defused), [_player, _bombObj]] call CBA_fnc_globalEvent;
 } forEach _objects;

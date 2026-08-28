@@ -1,7 +1,6 @@
 PREP(activate);
 PREP(canActivate);
 PREP(confirmBury);
-PREP(confirmPlaceIed);
 PREP(confirmSuicide);
 PREP(confirmTraining);
 PREP(digUp);
@@ -14,7 +13,6 @@ PREP(handleDigUp);
 PREP(hasIed);
 PREP(hasSuicide);
 PREP(hasTrainingIed);
-PREP(iedTypes);
 PREP(isBury);
 PREP(isNotBury);
 PREP(makeSuicideBomber);
