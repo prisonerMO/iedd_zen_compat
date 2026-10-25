@@ -10,6 +10,7 @@
     #undef PREP
     #define PREP(fncName) [QPATHTOF(functions\DOUBLES(fnc,fncName).sqf), QFUNC(fncName)] call CBA_fnc_compileFunction
 #endif
+
 #define DFUNC(var1) TRIPLES(ADDON,fnc,var1)
 #define DEFUNC(var1,var2) TRIPLES(DOUBLES(PREFIX,var1),fnc,var2)
 
@@ -23,11 +24,20 @@
 #define QQXGVAR(var) QUOTE(QXGVAR(var))
 #define QQEXGVAR(var1,var2) QUOTE(QEXGVAR(var1,var2))
 #define IEDD_PREP(func) PREP(func); TRIPLES(XADDON,fnc,func) = DFUNC(func)
+#define XLSTRING(var1) QUOTE(TRIPLES(STR,XADDON,var1))
+#define XCSTRING(var1) QUOTE(TRIPLES($STR,XADDON,var1))
+#define EXLSTRING(var1,var2) QUOTE(TRIPLES(STR,DOUBLES(IEDD_PREFIX,var1),var2))
 #define EXCSTRING(var1,var2) QUOTE(TRIPLES($STR,DOUBLES(IEDD_PREFIX,var1),var2))
-#define XFUNC(var1) TRIPLES(IEDD_PREFIX,fnc,var1))
+#define LXLSTRING(var1) localize QUOTE(TRIPLES(STR,XADDON,var1))
+#define LEXLSTRING(var1,var2) localize QUOTE(TRIPLES(STR,DOUBLES(IEDD_PREFIX,var1),var2))
+#define XFUNC(var1) TRIPLES(IEDD_PREFIX,fnc,var1)
 #define QXFUNC(var1) QUOTE(XFUNC(var1))
 #define QQXFUNC(var1) QUOTE(QXFUNC(var1))
 #define XFUNC_INNER(var1,var2) TRIPLES(DOUBLES(IEDD_PREFIX,var1),fnc,var2)
 #define EXFUNC(var1,var2) XFUNC_INNER(var1,var2)
 #define QQXFUNC_INNER(var1,var2) QUOTE(QXFUNC_INNER(var1,var2))
 #define QQEXFUNC(var1,var2) QUOTE(QEXFUNC(var1,var2))
+
+
+#include "script_debug.hpp"
+#include "script_classes.hpp"
